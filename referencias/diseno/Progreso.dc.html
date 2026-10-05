@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Progreso</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Barlow:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#0d1116}
+a{color:#f08a3a}a:hover{color:#ffa65e}
+button{font:inherit;cursor:pointer}
+.scroll{scrollbar-width:none}.scroll::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; display: flex; flex-direction: column; background: #12171d; color: #e8edf2; font-family: 'Barlow', system-ui, sans-serif; font-size: 16px; line-height: 1.4; overflow: hidden">
+<main class="scroll" style="flex: 1; min-height: 0; overflow-y: auto; padding: 28px 16px 24px; display: flex; flex-direction: column; gap: 16px">
+
+<header>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #98a5b4">Desde el 26 de agosto</div>
+<h1 style="margin: 6px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 46px; line-height: .92; text-transform: uppercase">Progreso</h1>
+</header>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<div style="background: #1b222b; border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 2px">
+<b style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 32px; line-height: 1">2<span style="font-size: 18px; color: #98a5b4">/3</span></b>
+<span style="font-size: 13px; color: #98a5b4; line-height: 1.25">Esta semana</span>
+</div>
+<div style="background: #1b222b; border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 2px">
+<b style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 32px; line-height: 1">16</b>
+<span style="font-size: 13px; color: #98a5b4; line-height: 1.25">Sesiones en total</span>
+</div>
+<div style="background: #1b222b; border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 2px">
+<b style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 32px; line-height: 1; color: #f08a3a">4</b>
+<span style="font-size: 13px; color: #98a5b4; line-height: 1.25">Semanas seguidas 3/3</span>
+</div>
+</div>
+
+<section style="background: #1b222b; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase">Días asistidos</h2>
+<span style="font-size: 13px; color: #98a5b4">Últimas 16 semanas</span>
+</div>
+<div role="img" aria-label="Calendario: 16 sesiones en las últimas 6 semanas" style="display: grid; grid-template-rows: repeat(7, 16px); grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 4px">
+<sc-for list="{{cells}}" as="c" hint-placeholder-count="112">
+<i style="{{c.style}}"></i>
+</sc-for>
+</div>
+<div style="display: flex; gap: 16px; font-size: 12px; color: #98a5b4; align-items: center">
+<span style="display: flex; align-items: center; gap: 6px"><i style="width: 12px; height: 12px; border-radius: 3px; background: #26303b"></i>Descanso</span>
+<span style="display: flex; align-items: center; gap: 6px"><i style="width: 12px; height: 12px; border-radius: 3px; background: #f08a3a"></i>Entrenado</span>
+<span style="margin-left: auto">Filas: lun → dom</span>
+</div>
+</section>
+
+<section style="background: #1b222b; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase">Peso levantado</h2>
+<button type="button" aria-label="Ejercicio: press inclinado con mancuernas. Cambiar" style="display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 48px; padding: 0 14px; border-radius: 12px; background: #12171d; border: 1px solid #33404e; color: #e8edf2; font-size: 15px; font-weight: 600; text-align: left">
+<span>Press inclinado con mancuernas</span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#98a5b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+<div style="display: flex; align-items: baseline; gap: 10px">
+<b style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 34px; line-height: 1">12 <small style="font-size: 16px; color: #98a5b4">kg</small></b>
+<span style="font-size: 14px; font-weight: 600; color: #5cc08a">+4 kg en 5 sesiones</span>
+</div>
+<svg width="326" height="160" viewBox="0 0 326 160" role="img" aria-label="Serie más pesada: 8, 10, 10, 12 y 12 kg" style="display: block; font-family: 'Barlow', sans-serif">
+<g stroke="#2a3440" stroke-width="1">
+<line x1="30" x2="314" y1="14" y2="14"></line><line x1="30" x2="314" y1="44" y2="44"></line><line x1="30" x2="314" y1="74" y2="74"></line><line x1="30" x2="314" y1="104" y2="104"></line><line x1="30" x2="314" y1="134" y2="134"></line>
+</g>
+<g fill="#98a5b4" font-size="11" text-anchor="end">
+<text x="22" y="18">14</text><text x="22" y="48">12</text><text x="22" y="78">10</text><text x="22" y="108">8</text><text x="22" y="138">6</text>
+</g>
+<path d="M30 104L101 74L172 74L243 44L314 44L314 134L30 134Z" fill="#f08a3a" fill-opacity=".12"></path>
+<path d="M30 104L101 74L172 74L243 44L314 44" fill="none" stroke="#f08a3a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></path>
+<g fill="#1b222b" stroke="#f08a3a" stroke-width="2">
+<circle cx="30" cy="104" r="4"></circle><circle cx="101" cy="74" r="4"></circle><circle cx="172" cy="74" r="4"></circle><circle cx="243" cy="44" r="4"></circle>
+</g>
+<circle cx="314" cy="44" r="5.5" fill="#f08a3a"></circle>
+<path d="M314 44L314 14" stroke="#5cc08a" stroke-width="2" stroke-dasharray="3 3"></path>
+<circle cx="314" cy="14" r="4" fill="none" stroke="#5cc08a" stroke-width="2"></circle>
+<text x="304" y="18" text-anchor="end" fill="#5cc08a" font-size="11" font-weight="600">Hoy: 14</text>
+<g fill="#98a5b4" font-size="11">
+<text x="30" y="154">28 ago</text><text x="172" y="154" text-anchor="middle">11 sep</text><text x="314" y="154" text-anchor="end">25 sep</text>
+</g>
+</svg>
+</section>
+
+<section style="background: #1b222b; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline">
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase">Peso corporal</h2>
+<span style="font-size: 14px; font-weight: 600; color: #5cc08a">−2,2 kg</span>
+</div>
+<svg width="326" height="130" viewBox="0 0 326 130" role="img" aria-label="Peso corporal semanal de 83,4 a 81,2 kg" style="display: block; font-family: 'Barlow', sans-serif">
+<g stroke="#2a3440" stroke-width="1">
+<line x1="30" x2="314" y1="14" y2="14"></line><line x1="30" x2="314" y1="36.5" y2="36.5"></line><line x1="30" x2="314" y1="59" y2="59"></line><line x1="30" x2="314" y1="81.5" y2="81.5"></line><line x1="30" x2="314" y1="104" y2="104"></line>
+</g>
+<g fill="#98a5b4" font-size="11" text-anchor="end">
+<text x="22" y="18">84</text><text x="22" y="40.5">83</text><text x="22" y="63">82</text><text x="22" y="85.5">81</text><text x="22" y="108">80</text>
+</g>
+<path d="M30 27.5L86.8 36.5L143.6 43.2L200.4 56.8L257.2 63.5L314 77" fill="none" stroke="#8fb2d6" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></path>
+<g fill="#1b222b" stroke="#8fb2d6" stroke-width="2">
+<circle cx="30" cy="27.5" r="3.5"></circle><circle cx="86.8" cy="36.5" r="3.5"></circle><circle cx="143.6" cy="43.2" r="3.5"></circle><circle cx="200.4" cy="56.8" r="3.5"></circle><circle cx="257.2" cy="63.5" r="3.5"></circle>
+</g>
+<circle cx="314" cy="77" r="5" fill="#8fb2d6"></circle>
+<text x="306" y="96" text-anchor="end" fill="#e8edf2" font-size="12" font-weight="600">81,2 kg</text>
+<g fill="#98a5b4" font-size="11">
+<text x="30" y="124">24 ago</text><text x="314" y="124" text-anchor="end">28 sep</text>
+</g>
+</svg>
+<div style="display: flex; gap: 8px; align-items: flex-end">
+<label style="flex: 1; display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #98a5b4">Peso de hoy (kg)
+<input inputmode="decimal" placeholder="81,0" style="min-height: 48px; border-radius: 12px; border: 1px solid #33404e; background: #12171d; color: #e8edf2; padding: 0 14px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; box-sizing: border-box; width: 100%">
+</label>
+<button type="button" style="min-height: 48px; padding: 0 18px; border-radius: 12px; border: 0; background: #f08a3a; color: #1a1006; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 17px; text-transform: uppercase; letter-spacing: .04em">Añadir</button>
+</div>
+</section>
+
+<section style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 18px; border: 1px solid #2a3440">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#98a5b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+<div style="flex: 1; min-width: 0">
+<div style="font-weight: 600; font-size: 15px">Copia de seguridad</div>
+<div style="font-size: 13px; color: #98a5b4">Tus datos viven solo en este móvil</div>
+</div>
+<button type="button" style="min-height: 44px; padding: 0 12px; border-radius: 12px; border: 1px solid #33404e; background: transparent; color: #e8edf2; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase">Descargar</button>
+</section>
+</main>
+
+<nav aria-label="Secciones" style="display: flex; gap: 4px; padding: 6px 8px 22px; background: #161c23; border-top: 1px solid #2a3440; flex-shrink: 0">
+<a href="Main.dc.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #98a5b4; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7v10M3 9.5v5M18 7v10M21 9.5v5M6 12h12"></path></svg>Hoy</a>
+<a href="Rutina.dc.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #98a5b4; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"></path></svg>Rutina</a>
+<a href="Progreso.dc.html" aria-current="page" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #f08a3a; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16M7 15l4-4 3 3 5-6"></path></svg>Progreso</a>
+<a href="Historial.dc.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #98a5b4; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>Historial</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    // 16 semanas × 7 días (columnas = semanas, filas = lun → dom). La semana 0 empieza el lun 15 jun.
+    // Empezó la semana 10 (mié 26 ago); semanas 11-14 lun/mié/vie; semana 15 (actual): lun y mié; hoy = domingo.
+    var on = {};
+    on["10-2"] = 1; on["10-4"] = 1;
+    for (var w = 11; w <= 14; w++) { on[w + "-0"] = 1; on[w + "-2"] = 1; on[w + "-4"] = 1; }
+    on["15-0"] = 1; on["15-2"] = 1;
+    var base = "display:block;border-radius:4px;";
+    var cells = [];
+    for (var wk = 0; wk < 16; wk++) {
+      for (var d = 0; d < 7; d++) {
+        var k = wk + "-" + d;
+        var st = on[k] ? "background:#f08a3a" : "background:#26303b";
+        if (wk === 15 && d === 6) st = "background:#26303b;box-shadow:inset 0 0 0 2px #f08a3a";
+        cells.push({ style: base + st });
+      }
+    }
+    return { cells: cells };
+  }
+}
+</script>
+</body>
+</html>

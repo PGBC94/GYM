@@ -1,0 +1,88 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Entreno.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "2 · Entrenando",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "Historial.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "6 · Historial",
+      "w": 390,
+      "x": 2350,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "1 · Hoy",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "Progreso.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "5 · Progreso",
+      "w": 390,
+      "x": 1880,
+      "y": 0
+    },
+    "Rutina.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "4 · Rutina",
+      "w": 390,
+      "x": 1410,
+      "y": 0
+    },
+    "Tecnica.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "radius": 28,
+      "title": "3 · Técnica",
+      "w": 390,
+      "x": 940,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-04T14:13:35Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "title": {
+      "kind": "title1",
+      "maxW": 2740,
+      "text": "Mi Rutina · interfaz móvil",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Entreno.dc.html",
+    "Tecnica.dc.html",
+    "Rutina.dc.html",
+    "Progreso.dc.html",
+    "Historial.dc.html"
+  ],
+  "pages": [],
+  "title": "Mi Rutina · App móvil"
+}

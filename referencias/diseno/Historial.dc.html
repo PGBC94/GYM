@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historial</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Barlow:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#0d1116}
+a{color:#f08a3a}a:hover{color:#ffa65e}
+button{font:inherit;cursor:pointer}
+.scroll{scrollbar-width:none}.scroll::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; display: flex; flex-direction: column; background: #12171d; color: #e8edf2; font-family: 'Barlow', system-ui, sans-serif; font-size: 16px; line-height: 1.4; overflow: hidden">
+<main class="scroll" style="flex: 1; min-height: 0; overflow-y: auto; padding: 28px 16px 24px; display: flex; flex-direction: column; gap: 16px">
+
+<header>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #98a5b4">16 sesiones guardadas</div>
+<h1 style="margin: 6px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 46px; line-height: .92; text-transform: uppercase">Historial</h1>
+</header>
+
+<div role="group" aria-label="Filtrar por día" style="display: flex; gap: 8px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="4">
+<button type="button" aria-pressed="{{f.sel}}" onClick="{{f.pick}}" style="{{f.style}}">{{f.label}}</button>
+</sc-for>
+</div>
+
+<sc-for list="{{weeks}}" as="w" hint-placeholder-count="3">
+<section style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 0 2px">
+<h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: #98a5b4">{{w.label}}</h2>
+<span style="{{w.badge}}">{{w.count}}</span>
+</div>
+<sc-for list="{{w.items}}" as="s" hint-placeholder-count="3">
+<article style="display: flex; gap: 14px; padding: 14px; border-radius: 16px; background: #1b222b">
+<div style="flex-shrink: 0; width: 44px; display: flex; flex-direction: column; align-items: center">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #98a5b4">{{s.dow}}</span>
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">{{s.day}}</span>
+</div>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="{{s.tagStyle}}">{{s.name}}</span>
+<span style="font-size: 13px; color: #98a5b4">{{s.meta}}</span>
+</div>
+<div style="font-size: 14px; line-height: 1.4; color: #c5ced8">{{s.lifts}}</div>
+<sc-if value="{{s.hasNote}}" hint-placeholder-val="{{false}}">
+<div style="font-size: 13px; line-height: 1.4; color: #98a5b4; font-style: italic">“{{s.note}}”</div>
+</sc-if>
+</div>
+</article>
+</sc-for>
+</section>
+</sc-for>
+</main>
+
+<nav aria-label="Secciones" style="display: flex; gap: 4px; padding: 6px 8px 22px; background: #161c23; border-top: 1px solid #2a3440; flex-shrink: 0">
+<a href="Main.dc.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #98a5b4; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7v10M3 9.5v5M18 7v10M21 9.5v5M6 12h12"></path></svg>Hoy</a>
+<a href="Rutina.dc.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #98a5b4; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"></path></svg>Rutina</a>
+<a href="Progreso.dc.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #98a5b4; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16M7 15l4-4 3 3 5-6"></path></svg>Progreso</a>
+<a href="Historial.dc.html" aria-current="page" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #f08a3a; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>Historial</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: "all" };
+  }
+  renderVals() {
+    var self = this;
+    var f = this.state.filter;
+    var W = [
+      { label: "28 sep – 4 oct", count: "2/3", full: false, items: [
+        { dow: "mié", day: "30", d: "A", meta: "54 min · 19/19 series", lifts: "Goblet 16 kg · Press banca 12 kg · Jalón 45 kg", note: "Buena sesión, hombro derecho bien." },
+        { dow: "lun", day: "28", d: "C", meta: "51 min · 18/18 series", lifts: "Sumo 18 kg · Remo 1 mano 14 kg · Hip thrust 20 kg", note: "" }
+      ] },
+      { label: "21 – 27 sep", count: "3/3", full: true, items: [
+        { dow: "vie", day: "25", d: "B", meta: "56 min · 18/18 series", lifts: "Peso muerto rumano 14 kg · Remo polea 30 kg · Press inclinado 12 kg", note: "Subir el press inclinado la próxima." },
+        { dow: "mié", day: "23", d: "A", meta: "53 min · 19/19 series", lifts: "Goblet 16 kg · Press banca 12 kg · Jalón 42,5 kg", note: "" },
+        { dow: "lun", day: "21", d: "C", meta: "49 min · 17/18 series", lifts: "Sumo 16 kg · Remo 1 mano 14 kg · Hip thrust 18 kg", note: "Me salté una serie de laterales, cansado." }
+      ] },
+      { label: "14 – 20 sep", count: "3/3", full: true, items: [
+        { dow: "vie", day: "18", d: "B", meta: "55 min · 18/18 series", lifts: "Peso muerto rumano 12 kg · Remo polea 30 kg · Press inclinado 12 kg", note: "" },
+        { dow: "mié", day: "16", d: "A", meta: "52 min · 19/19 series", lifts: "Goblet 14 kg · Press banca 12 kg · Jalón 42,5 kg", note: "" },
+        { dow: "lun", day: "14", d: "C", meta: "50 min · 18/18 series", lifts: "Sumo 16 kg · Remo 1 mano 12 kg · Hip thrust 18 kg", note: "" }
+      ] }
+    ];
+    var tagColors = { A: "background:#1e3347;color:#8fb2d6", B: "background:#3a2414;color:#ffb27a", C: "background:#1f3a2b;color:#5cc08a" };
+    var tagBase = "padding:2px 8px;border-radius:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;";
+    var chipBase = "flex:1;min-height:44px;border-radius:999px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase;";
+    var badgeBase = "padding:2px 8px;border-radius:999px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;";
+    var weeks = W.map(function (w) {
+      var items = w.items.filter(function (s) { return f === "all" || s.d === f; }).map(function (s) {
+        return { dow: s.dow, day: s.day, name: "Día " + s.d, meta: s.meta, lifts: s.lifts, note: s.note, hasNote: !!s.note, tagStyle: tagBase + tagColors[s.d] };
+      });
+      return { label: w.label, count: w.count, badge: badgeBase + (w.full ? "background:#3a2414;color:#f08a3a" : "background:#252e39;color:#98a5b4"), items: items, any: items.length > 0 };
+    }).filter(function (w) { return w.any; });
+    return {
+      filters: [["all", "Todos"], ["A", "Día A"], ["B", "Día B"], ["C", "Día C"]].map(function (x) {
+        var sel = x[0] === f;
+        return {
+          label: x[1],
+          sel: sel,
+          style: chipBase + (sel ? "background:#e8edf2;color:#12171d;border:0" : "background:transparent;color:#c5ced8;border:1px solid #33404e"),
+          pick: function () { self.setState({ filter: x[0] }); }
+        };
+      }),
+      weeks: weeks
+    };
+  }
+}
+</script>
+</body>
+</html>

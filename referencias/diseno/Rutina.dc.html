@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Rutina</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Barlow:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#0d1116}
+a{color:#f08a3a}a:hover{color:#ffa65e}
+button{font:inherit;cursor:pointer}
+.scroll{scrollbar-width:none}.scroll::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; display: flex; flex-direction: column; background: #12171d; color: #e8edf2; font-family: 'Barlow', system-ui, sans-serif; font-size: 16px; line-height: 1.4; overflow: hidden">
+<main class="scroll" style="flex: 1; min-height: 0; overflow-y: auto; padding: 28px 16px 24px; display: flex; flex-direction: column; gap: 16px">
+
+<header>
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #98a5b4">Full body · 3 días · Principiante</div>
+<h1 style="margin: 6px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 46px; line-height: .92; text-transform: uppercase">Rutina</h1>
+</header>
+
+<div role="tablist" aria-label="Día" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{days}}" as="d" hint-placeholder-count="3">
+<button type="button" role="tab" aria-selected="{{d.sel}}" onClick="{{d.pick}}" style="{{d.style}}">
+<span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px; line-height: 1; text-transform: uppercase">{{d.name}}</span>
+<span style="font-size: 12px; font-weight: 600; opacity: .85">{{d.tag}}</span>
+</button>
+</sc-for>
+</div>
+
+<section style="background: #1b222b; border-radius: 18px; overflow: hidden">
+<div style="padding: 14px 16px 10px">
+<div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #98a5b4">Enfoque</div>
+<h2 style="margin: 2px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.1; text-transform: uppercase">{{focus}}</h2>
+</div>
+<ul style="margin: 0; padding: 0; list-style: none">
+<sc-for list="{{exercises}}" as="e" hint-placeholder-count="7">
+<li style="border-top: 1px solid #2a3440">
+<a href="Tecnica.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; min-height: 64px; box-sizing: border-box; text-decoration: none; color: #e8edf2">
+<span style="flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #252e39; color: #98a5b4; display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px">{{e.n}}</span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+<span style="font-weight: 600; font-size: 15px; line-height: 1.25">{{e.name}}</span>
+<span style="font-size: 13px; color: #98a5b4; line-height: 1.3; margin-top: 2px">{{e.machine}} · {{e.rest}}</span>
+</span>
+<span style="flex-shrink: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 17px; color: #8fb2d6; white-space: nowrap">{{e.target}}</span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5f6d7d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M9 6l6 6-6 6"></path></svg>
+</a>
+</li>
+</sc-for>
+<li style="border-top: 1px solid #2a3440; display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #1f262f">
+<span style="flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #3a2414; color: #f08a3a; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"></path></svg></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+<span style="font-weight: 600; font-size: 15px; line-height: 1.25">{{cardio.name}}</span>
+<span style="font-size: 13px; color: #98a5b4; line-height: 1.3; margin-top: 2px">{{cardio.detail}}</span>
+</span>
+<span style="flex-shrink: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; color: #f08a3a; text-transform: uppercase; letter-spacing: .06em">Cardio</span>
+</li>
+</ul>
+</section>
+
+<section style="background: #1b222b; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase">Cómo funciona</h3>
+<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex-shrink: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: #f08a3a; width: 18px">1</span><p style="margin: 0; font-size: 15px">Entrena 3 días no seguidos y alterna A → B → C. La app te dice cuál toca.</p></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex-shrink: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: #f08a3a; width: 18px">2</span><p style="margin: 0; font-size: 15px">Termina cada serie sintiendo que podrías hacer 2 repeticiones más.</p></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><span style="flex-shrink: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: #f08a3a; width: 18px">3</span><p style="margin: 0; font-size: 15px"><b>Progresión doble:</b> si completas todas las series arriba del rango, sube el peso. Lo verás en verde.</p></div>
+</section>
+</main>
+
+<nav aria-label="Secciones" style="display: flex; gap: 4px; padding: 6px 8px 22px; background: #161c23; border-top: 1px solid #2a3440; flex-shrink: 0">
+<a href="Main.dc.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #98a5b4; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7v10M3 9.5v5M18 7v10M21 9.5v5M6 12h12"></path></svg>Hoy</a>
+<a href="Rutina.dc.html" aria-current="page" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #f08a3a; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"></path></svg>Rutina</a>
+<a href="Progreso.dc.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #98a5b4; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16M7 15l4-4 3 3 5-6"></path></svg>Progreso</a>
+<a href="Historial.dc.html" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 52px; text-decoration: none; color: #98a5b4; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .08em; text-transform: uppercase"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>Historial</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { day: "B" };
+  }
+  renderVals() {
+    var self = this;
+    var R = {
+      A: { name: "Día A", tag: "Sentadilla", focus: "Sentadilla · empuje horizontal · jalón",
+        ex: [["Sentadilla goblet", "Mancuerna al pecho", 3, "10-12", "90 s"], ["Press de banca con mancuernas", "Banco plano + mancuernas", 3, "10-12", "90 s"], ["Jalón al pecho", "Máquina de jalón", 3, "10-12", "90 s"], ["Curl femoral", "Máquina extensión / curl", 3, "12", "60 s"], ["Press de hombros sentado", "Banco vertical + mancuernas", 2, "10-12", "60 s"], ["Face pull con cuerda", "Polea doble, polea alta", 2, "15", "60 s"], ["Plancha", "Suelo / esterilla", 3, "30 s", "45 s"]],
+        cardio: { name: "Caminata en cinta inclinada", detail: "12 min · inclinación 8-10 %" } },
+      B: { name: "Día B", tag: "Bisagra", focus: "Bisagra de cadera · remo · empuje inclinado",
+        ex: [["Peso muerto rumano con mancuernas", "Mancuernas", 3, "10", "90 s"], ["Remo en polea baja", "Polea doble, poleas abajo", 3, "12", "90 s"], ["Press inclinado con mancuernas", "Banco ajustable a 30°", 3, "10-12", "90 s"], ["Extensión de cuádriceps", "Máquina extensión / curl", 3, "12-15", "60 s"], ["Zancada estática con mancuernas", "Mancuernas", 2, "10 / pierna", "60 s"], ["Hiperextensiones", "Banco romano a 45°", 2, "12-15", "60 s"], ["Press Pallof", "Polea a la altura del pecho", 2, "10 / lado", "45 s"]],
+        cardio: { name: "Intervalos en bicicleta", detail: "10 min · 30 s fuerte + 60 s suave" } },
+      C: { name: "Día C", tag: "Glúteo", focus: "Glúteo · espalda unilateral · hombro y brazos",
+        ex: [["Sentadilla sumo con mancuerna", "Mancuerna entre las piernas", 3, "12", "90 s"], ["Remo a una mano con mancuerna", "Banco plano + mancuerna", 3, "10-12 / lado", "60 s"], ["Aperturas en polea", "Polea doble a la altura del hombro", 3, "12-15", "60 s"], ["Hip thrust con mancuerna", "Espalda en el banco", 3, "12", "90 s"], ["Curl femoral", "Máquina extensión / curl", 2, "12", "60 s"], ["Elevaciones laterales", "Mancuernas ligeras", 2, "12-15", "45 s"], ["Curl de bíceps + extensión de tríceps", "Polea doble", 2, "12 + 12", "60 s"]],
+        cardio: { name: "Cuerdas de batalla o elíptica", detail: "8 × (20 s + 40 s descanso) o 12 min" } }
+    };
+    var day = this.state.day;
+    var d = R[day];
+    var base = "min-height:64px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;";
+    return {
+      days: ["A", "B", "C"].map(function (k) {
+        var sel = k === day;
+        return {
+          name: R[k].name,
+          tag: k === "B" ? "Te toca" : R[k].tag,
+          sel: sel,
+          style: base + (sel ? "background:#f08a3a;color:#1a1006;border:0" : "background:#1b222b;color:#e8edf2;border:1px solid #33404e"),
+          pick: function () { self.setState({ day: k }); }
+        };
+      }),
+      focus: d.focus,
+      exercises: d.ex.map(function (e, i) {
+        return { n: i + 1, name: e[0], machine: e[1], target: e[2] + " × " + e[3], rest: "desc. " + e[4] };
+      }),
+      cardio: d.cardio
+    };
+  }
+}
+</script>
+</body>
+</html>
