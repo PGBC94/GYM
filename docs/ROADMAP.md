@@ -15,7 +15,7 @@ Objetivo de la app: llevar en el móvil, dentro del gimnasio, la rutina **Full B
 | 4 | Diseño nuevo implementado (Hoy, Entrenando, Técnica…) | ✅ Hecho |
 | 5 | Copias de seguridad y migración de datos | ✅ Hecho · faltan pruebas automáticas |
 | 5b | «Mi equipo»: pesos reales de máquinas, mancuernas y discos (v1.1.0) | ✅ Hecho |
-| — | **Publicar e instalar en el móvil** (guía en `docs/PUBLICAR.md`) | 🔜 **Siguiente** |
+| — | Publicada en **https://pgbc94.github.io/GYM/** (repo público PGBC94/GYM) · falta instalar en los móviles | ✅ Hecho |
 | 6 | Mejoras (editor de rutina, récords, recordatorios…) | 💡 Ideas |
 
 ---

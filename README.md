@@ -2,7 +2,7 @@
 
 App web instalable (PWA) para seguir en el móvil la rutina **Full Body de 3 días (A/B/C)**: registrar series con botones −/+, temporizador de descanso, progresión doble, técnica de cada ejercicio con animaciones y seguimiento del progreso. Funciona sin conexión y los datos se guardan en el propio móvil.
 
-Versión **1.1.0** · Ver la [hoja de ruta](docs/ROADMAP.md).
+Versión **1.1.0** · **App: https://pgbc94.github.io/GYM/** · Ver la [hoja de ruta](docs/ROADMAP.md).
 
 ## Probarla en el ordenador
 
