@@ -1,6 +1,6 @@
 // Service worker de Mi Rutina: la app funciona sin conexión.
 // Cambia VERSION al publicar cambios para que los móviles descarguen la versión nueva.
-const VERSION = "mi-rutina-v1.2.0";
+const VERSION = "mi-rutina-v1.2.1";
 const SHELL = [
   "./", "./index.html", "./manifest.webmanifest", "./css/app.css",
   "./js/app.js", "./js/bus.js", "./js/state.js", "./js/storage.js", "./js/logic.js", "./js/utils.js", "./js/install.js",
@@ -12,7 +12,8 @@ const SHELL = [
 const FONTS = "mi-rutina-fonts";
 
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)));
+  // cache:"reload" evita que se guarden archivos viejos de la caché HTTP del navegador
+  e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: "reload" })))));
 });
 self.addEventListener("activate", e => {
   e.waitUntil((async () => {
