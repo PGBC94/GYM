@@ -1,7 +1,7 @@
 // Modo «Entrenando»: un ejercicio por pantalla, steppers, temporizador de descanso y cierre de sesión
 import { ROUTINE, INC, restSec, repRange } from "../data/routine.js";
 import { TECH } from "../data/technique.js";
-import { figSVG } from "../engine/figure.js";
+import { figSVG, phaseText } from "../engine/figure.js";
 import { lastFor, readyToProgress, topKg, performed } from "../logic.js";
 import { store } from "../storage.js";
 import { draft, setDraft, saveDraft, ui } from "../state.js";
@@ -84,7 +84,7 @@ function exHTML(d, cur) {
       </div>
     </div>
     <div class="cue">
-      <div class="stage">${figSVG(e.id, 0)}</div>
+      <div class="stage">${figSVG(e.id, 0)}<span class="ph" data-ph="${e.id}-0-s" aria-live="off">${esc(phaseText(e.id, 0, false))}</span></div>
       <div class="col">
         <p>${esc(e.tip)}</p>
         <button class="btn" data-act="tech" data-ex="${e.id}">${icon("video", 18)} Ver técnica</button>

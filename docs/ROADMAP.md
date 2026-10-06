@@ -15,6 +15,7 @@ Objetivo de la app: llevar en el móvil, dentro del gimnasio, la rutina **Full B
 | 4 | Diseño nuevo implementado (Hoy, Entrenando, Técnica…) | ✅ Hecho |
 | 5 | Copias de seguridad y migración de datos | ✅ Hecho · faltan pruebas automáticas |
 | 5b | «Mi equipo»: pesos reales de máquinas, mancuernas y discos (v1.1.0) | ✅ Hecho |
+| 5c | Animaciones mejoradas (v1.2.0) | ✅ Hecho |
 | — | Publicada en **https://pgbc94.github.io/GYM/** (repo público PGBC94/GYM) · falta instalar en los móviles | ✅ Hecho |
 | 6 | Mejoras (editor de rutina, récords, recordatorios…) | 💡 Ideas |
 
@@ -108,6 +109,16 @@ Decisión: **HTML + CSS + JavaScript con módulos, sin build ni npm**. Se public
 - [x] Asignar equipo a cada ejercicio; si es barra, en el entreno aparece qué discos poner.
 - [x] Los −/+ y la sugerencia de subida usan los pesos que existen; aviso si ya estás en el máximo.
 - [x] La configuración entra en la copia de seguridad.
+
+## ✅ Fase 5c — Animaciones (v1.2.0)
+
+- [x] Corregidas: press Pallof (ahora desde arriba, con el cable tirando de lado y la flecha de giro que hay que resistir), remo en polea (manos al ombligo), face pull (codos altos y atrás), remo a una mano (mancuerna hacia la cadera), hip thrust (omóplatos en el borde del banco), plancha (respiración visible).
+- [x] Figura más clara: pies, manos y ojo que indica hacia dónde mira.
+- [x] Músculo que trabaja en rosa; se intensifica en la fase de esfuerzo.
+- [x] Flecha verde con la dirección del movimiento y texto de fase en directo («Baja · 2-3 s», «Aguanta», «Sube · 1 s»), también en la pantalla de entreno.
+- [x] Controles en la hoja de técnica: pausa, cámara lenta 0,5× y barra para moverla a mano.
+- [x] Con «reducir movimiento» activado empieza en pausa y muestra inicio y final.
+- [ ] Siguiente: botón «Ver error» con la postura incorrecta en rojo para cada ejercicio.
 
 ## 💡 Fase 6 — Ideas para después
 

@@ -9,7 +9,7 @@ import { viewEntreno, trainActions, onTrainInput, tick } from "./screens/entreno
 import { viewRutina } from "./screens/rutina.js";
 import { viewProgreso, progresoActions, onProgexChange } from "./screens/progreso.js";
 import { viewHistorial, historialActions } from "./screens/historial.js";
-import { techSheet, settingsSheet, sheetActions, importFile } from "./screens/sheets.js";
+import { techSheet, settingsSheet, sheetActions, importFile, onFigScrub } from "./screens/sheets.js";
 import { viewEquipo, equipoActions, onEquipoChange, onEquipoInput } from "./screens/equipo.js";
 import { $, icon, toast } from "./utils.js";
 
@@ -104,7 +104,7 @@ document.addEventListener("click", async ev => {
   ev.preventDefault();
   try { await fn(b, ev); } catch (err) { console.error(err); toast("Algo ha fallado: " + (err?.message || err)); }
 });
-document.addEventListener("input", ev => { onEquipoInput(ev.target) || onTrainInput(ev.target); });
+document.addEventListener("input", ev => { onFigScrub(ev.target) || onEquipoInput(ev.target) || onTrainInput(ev.target); });
 document.addEventListener("change", ev => {
   const t = ev.target;
   if (onEquipoChange(t)) return;
