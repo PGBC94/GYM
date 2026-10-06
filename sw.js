@@ -1,6 +1,6 @@
 // Service worker de Mi Rutina: la app funciona sin conexión.
 // Cambia VERSION al publicar cambios para que los móviles descarguen la versión nueva.
-const VERSION = "mi-rutina-v1.2.1";
+const VERSION = "mi-rutina-v1.2.2";
 const SHELL = [
   "./", "./index.html", "./manifest.webmanifest", "./css/app.css",
   "./js/app.js", "./js/bus.js", "./js/state.js", "./js/storage.js", "./js/logic.js", "./js/utils.js", "./js/install.js",

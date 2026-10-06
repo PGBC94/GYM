@@ -10,7 +10,7 @@ import { bus } from "../bus.js";
 import { esc, icon, toast, lsGet, fmtD, todayStr } from "../utils.js";
 import { install } from "../install.js";
 
-export const APP_VERSION = "1.2.1";
+export const APP_VERSION = "1.2.2";
 
 function muscleList(s) { return String(s || "").replace(/\s*\(([^)]*)\)/g, "").split(/,\s*|\s+y\s+/).filter(Boolean); }
 
